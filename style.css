@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+
+:root {
+    --main-grey: #252527;
+    --main-black:#0A0A0A;
+    --second-grey:#BFBFBF;
+    --second-black:#1C1C1C;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: grid;
+    grid-template: 70px 5fr / 1fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+    background-color: var(--main-black);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    background-color: var(--main-grey);
+    padding: 0px 50px 0px 50px;
+
+    
+    h1 {
+        font-family: "Moo Lah Lah", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: var(--second-grey);
+        letter-spacing: 5px;
+    }
+    
+    nav img {
+        filter: invert(60%);
+    }
+    nav,
+    h4,
+    usernick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: var(--second-grey);
+    }
+
+    .catalog,
+    .search,
+    .forum {
+        display: flex;
+        gap: 10px;
+    }
+
+    user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h5 {
+        font-size: 5rem;
+        color: var(--second-grey);
+        margin-top: 20px;
+    }
+    .library {
+        background-color: aqua;
+        height: 300px;
+        width: 1000px;
+        background-color: var(--second-black);
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+}
