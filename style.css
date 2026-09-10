@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap');
 
 :root {
@@ -7,6 +7,7 @@
     --second-grey:#BFBFBF;
     --second-black:#1C1C1C;
     --main-red:#EF3520;
+    --main-green: #79bc3b;
 }
 * {
     margin: 0;
@@ -39,12 +40,11 @@ header {
 
     
     h1 {
-        font-family: "Moo Lah Lah", sans-serif;
+        font-family: "Bungee Tint", sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 2.5rem;
-        color: var(--second-grey);
         letter-spacing: 5px;
+        text-decoration: none;
 
     }
     
@@ -112,12 +112,13 @@ main {
     padding: 20px;
     }
 
-
     .book img {
         height: 220px;
         width: 150px;
         border-radius: 13px;
         object-fit: cover;
+        transition: box-shadow 0.3s ease;
+    
     }
     .book h3 {
         color: var(--second-grey);
@@ -140,6 +141,10 @@ main {
         text-decoration: none;
         color: var(--second-grey);
     }
+    .book img:hover {
+        box-shadow: 0 0 15px var(--main-red);
+    }
+
 }
 
 section {
@@ -227,6 +232,9 @@ section {
             gap: 30px;
             
         }
+        .cover img {
+            border-radius: 7px;
+        }
     }
 
     .trending {
@@ -235,7 +243,9 @@ section {
         display: flex;
         flex-direction: column;
 
-        
+        .cover img {
+            border-radius: 7px;
+        }
 
         .books {
             display: flex;
@@ -256,6 +266,10 @@ section {
         display: flex;
         flex-direction: column;
 
+        .cover img {
+            border-radius: 7px;
+        }
+
         .books {
             display: flex;
             flex-direction: column;
@@ -273,7 +287,7 @@ section {
 
 aside {
     grid-area: aside;
-    height: 300px;
+    height: 200px;
     width: 1200px;
     background-color: var(--second-black);
     display: flex;
@@ -282,6 +296,9 @@ aside {
     justify-self: center;
     border-radius: 14px;
     margin-top: 20px;
+    background-image: url(./ad/AD.jpg);
+    background-size: contain;
+    background-position: center;
 
     h1 {
         font-family: "Open Sans", sans-serif;
@@ -304,10 +321,53 @@ aside {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "left right";
+    font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
 
     .left{
         grid-area: left;
+        padding: 20px;
+        .new-manga {
+            height: 860px;
+            width: 580px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 23px;
+        }
+        .new-manga-card {
+            height: 200px;
+            width: 550px;
+            display: flex;
+
+            .new-manga-card-img img {
+                border-radius: 5px;
+            }
+            .new-manga-card-text {
+                align-self: center;
+                margin-left: 20px;
+                font-family: "Open Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 1.1rem;
+                color: var(--second-grey);
+
+                h5 {
+                    font-size: 0.9rem;
+                    filter: contrast(20%);
+                }
+                p {
+                    font-size: 0.8rem;
+                    filter: contrast(1%);
+                }
+
+            }
+        }
     }
+}
 
     .right {
         padding: 20px;
@@ -317,28 +377,91 @@ aside {
         grid-template: repeat(3, minmax(150px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
 
         .review-card {
-            background-color: #EF3520;
+            background-color: rgba(255, 7, 7, 0.177);
             border-radius: 14px;
+            overflow: hidden;
+            color: var(--second-grey);
+        
+        .review-card-img img {
+            object-fit: cover;
         }
+        .review > img,
+        .rating > img {
+            filter: brightness(0) saturate(100%) invert(78%);
+        }
+        .review-title {
+            font-size: 1rem;
+            padding: 5px 5px 3px 5px;
+        }
+        .review-text {
+            padding: 0px 5px 3px 5px;
+            font-size: 0.79rem;
+            filter: contrast(10%);
+        }
+        .review-counter {
+            margin-top: 10px;
+            padding: 0px 5px 0px 5px;
+            font-size: 0.75rem;
+            text-align: center;
+            filter: contrast(5%);
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 20px;
+            padding: 5px 5px 0px 5px;
+        }
+
+        .rating {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .review {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .review-counter {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 5px 0px 5px;
+        }
+        .views {
+            display: flex;
+            gap: 5px;
+        }
+        .likes {
+            display: flex;
+            gap: 5px;
+        }
+        
     }
 }
 
 footer {
-    grid-area: footer;
-    height: 150px;
+    min-height: 180px;
+    margin-top: 30px;
+    padding: 30px;
     background-color: var(--second-black);
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--second-grey);
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
 
-    h1 {
-        font-family: "Open Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 800;
-        font-style: normal;
-        font-size: 11rem;
-        letter-spacing: 50px;
-        filter: contrast(70%);
-    }
+footer h2 {
+    color: var(--main-red);
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer small {
+    display: block;
+    margin-top: 25px;
+    color: #777;
 }

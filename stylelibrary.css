@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap');
 
 :root {
@@ -39,11 +39,9 @@ header {
 
     
     h1 {
-        font-family: "Moo Lah Lah", sans-serif;
+        font-family: "Bungee Tint", sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 2.5rem;
-        color: var(--second-grey);
         letter-spacing: 5px;
         text-decoration: none;
 
@@ -193,12 +191,14 @@ main {
 
     .cards {
         display: grid;
-        grid-template: repeat(3,minmax(350px, 1fr)) / repeat(auto-fill, minmax(250px, 1fr));
+        grid-template: repeat(3,minmax(300px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
     }
-    .card {
+    .card,
+    .newcard {
         position: relative;
         border-radius: 14px;
+        transition: box-shadow 0.3s ease;
     }
     .newcard {
         border-radius: 14px;
@@ -247,5 +247,11 @@ main {
         height: 30px;
         width: 70px;
         border-radius: 14px;
+        box-shadow: 0 0 10px var(--main-black);
+    }
+
+    .card:hover,
+    .newcard:hover {
+        box-shadow: 0 0 15px var(--main-red);
     }
 }
