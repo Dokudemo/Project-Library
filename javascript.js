@@ -1,19 +1,52 @@
-function Book(title, author, pages, read) {
+const addBtn = document.querySelector('#open-dialog');
+const dialog = document.querySelector('#manga-dialog');
 
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
 
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read} yet`;
+addBtn.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+dialog.addEventListener('close', () => {
+    console.log('Dialog result:', dialog.returnValue)
+})
+
+
+const gimli = {
+    name: 'Gimli',
+    race: 'dwarf',
+    weapon: 'axe',
+    'dmg per second': '35 DPS',
+    greet: function() {
+        return `Hi, my name is ${this.name}`
+    },
+    fight: function() {
+        return `${this.name} take ${this.weapon} and make 1900 dmg`
     }
 }
 
-const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read');
+console.log(gimli.greet())
 
-console.log(book1.info())
+console.log(gimli)
 
-const book2 = new Book('Зеленый слоник', 'Пахом', 200, 'read')
+console.log(gimli.fight())
 
-console.log(book2.info())
+console.log(gimli["dmg per second"])
+
+
+gimli.age = 150;
+
+console.log(gimli)
+
+console.log(gimli.age)
+
+gimli.weapon = 'battle axe';
+
+console.log(gimli)
+
+delete gimli.weapon
+
+console.log(gimli)
+
+for(let key in gimli) {
+    console.log(gimli[key]);
+}

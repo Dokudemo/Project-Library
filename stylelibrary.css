@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,600&display=swap');
+
+:root {
+    --main-grey: #252527;
+    --main-black:#0A0A0A;
+    --second-grey:#BFBFBF;
+    --second-black:#1C1C1C;
+    --main-red:#EF3520;
+    --main-green: #79bc3b;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: grid;
+    grid-template: 70px 5fr / 1fr;
+    grid-template-areas: 
+        "header"
+        "main";
+    background-color: var(--main-black);
+}
+
+header > a {
+        text-decoration: none;
+    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    background-color: var(--main-grey);
+    padding: 0px 50px 0px 50px;
+
+
+
+    
+    h1 {
+        font-family: "Moo Lah Lah", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: var(--second-grey);
+        letter-spacing: 5px;
+        text-decoration: none;
+
+    }
+    
+    nav img {
+        filter: invert(60%);
+    }
+    nav,
+    h4,
+    usernick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: var(--second-grey);
+    }
+
+    .catalog,
+    .search,
+    .forum {
+        display: flex;
+        gap: 10px;
+    }
+
+    user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    button {
+        border: none;
+        background-color: var(--main-green);
+        height: 30px;
+        width: 80px;
+        border-radius: 10px;
+    }
+
+    .login-btn {
+        border: none;
+        background-color: var(--main-red);
+        height: 30px;
+        width: 80px;
+        border-radius: 10px;
+    }
+
+    #manga-dialog {
+    position: relative;
+    height: 600px;
+    width: 500px;
+    justify-self: center;
+    align-self: center;
+    border-radius: 14px;
+    background-color: var(--main-grey);
+    border: none;
+
+    h2 {
+        justify-self: center;
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 2rem;
+        color: var(--second-grey);
+        padding: 20px;
+    }
+    label {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 1rem;
+        color: var(--second-grey);
+
+    } 
+
+    input:not([type="radio"]) {
+        height: 30px;
+        width: 460px;
+        border: none;
+        background-color: var(--second-black);
+        color: var(--second-grey);
+        font-size: 1.2rem;
+    }
+
+    input:focus {
+        outline: 0;
+    }
+
+    button[value="add"] {
+        position: absolute;
+        height: 40px;
+        width: 450px;
+        background-color: var(--main-green);
+        left: 25px;
+        bottom: 20px;
+        }
+    
+    button[value="cancel"] {
+        position: absolute;
+        height: 40px;
+        width: 450px;
+        background-color: var(--main-red);
+        left: 25px;
+        bottom: 80px;
+        }
+    
+}
+
+    #manga-dialog form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 30px;
+    }
+    .radio {
+        display: flex;
+        gap: 50px;
+    }
+    input[type="radio"] {
+        accent-color: var(--main-grey);
+    }
+
+    .radio div {
+        display: flex;
+        gap: 5px;
+    }
+    #pages::-webkit-inner-spin-button,
+    #pages::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+
+    dialog::backdrop {
+    background: rgb(0 0 0 / 90%);
+    }
+}
+
+main {
+    grid-area: main;
+    background-color: var(--second-black);
+    padding: 50px;
+
+    .cards {
+        display: grid;
+        grid-template: repeat(3,minmax(350px, 1fr)) / repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        position: relative;
+        border-radius: 14px;
+    }
+    .newcard {
+        border-radius: 14px;
+        background-color: var(--main-grey);
+        color: var(--second-grey);
+        font-size: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+    }
+    .card .delete {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: var(--main-red);
+    }
+    .card .change {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: var(--main-green);
+    }
+    .card .pages {
+        position: absolute;
+        z-index: 3;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        background-color: #cbb016;
+        height: 20px;
+        width: 69px;
+        top: 10px;
+        left: 10px;
+        border: 1px solid black;
+
+    }
+    button {
+        border: none;
+        height: 30px;
+        width: 70px;
+        border-radius: 14px;
+    }
+}

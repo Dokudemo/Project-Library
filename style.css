@@ -16,14 +16,19 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template: 70px 2fr 2fr 2fr/ 1fr;
+    grid-template: 70px 2fr 2fr 2fr 2fr/ 1fr;
     grid-template-areas: 
         "header"
         "main"
         "trending"
-        "aside";
+        "aside"
+        "forum-rev"
+        "footer";
         background-color: var(--main-black);
 }
+header > a {
+        text-decoration: none;
+    }
 header {
     display: flex;
     justify-content: space-between;
@@ -40,6 +45,7 @@ header {
         font-size: 2.5rem;
         color: var(--second-grey);
         letter-spacing: 5px;
+
     }
     
     nav img {
@@ -284,5 +290,55 @@ aside {
             font-style: normal;
             font-size: 17rem;
             filter: contrast(70%);
+    }
+}
+
+.forum-rev {
+    grid-area: forum-rev;
+    height: 900px;
+    width: 1200px;
+    background-color: var(--second-black);
+    justify-self: center;
+    margin-top: 20px;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+
+    .left{
+        grid-area: left;
+    }
+
+    .right {
+        padding: 20px;
+        grid-area: right;
+        gap: 20px;
+        display: grid;
+        grid-template: repeat(3, minmax(150px, 1fr)) / repeat(auto-fill, minmax(200px, 1fr));
+
+        .review-card {
+            background-color: #EF3520;
+            border-radius: 14px;
+        }
+    }
+}
+
+footer {
+    grid-area: footer;
+    height: 150px;
+    background-color: var(--second-black);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 11rem;
+        letter-spacing: 50px;
+        filter: contrast(70%);
     }
 }

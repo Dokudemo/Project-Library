@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My library</title>
+    <link rel="stylesheet" href="./stylelibrary.css">
+    <script src="./javascript.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="./index.html"><h1>Manga Library</h1></a>
+        <nav>
+            <div class="catalog">
+                <img src="./icons/catalog.svg" alt="catalog-icon" height="20px">
+                <p>Catalog</p>
+            </div>
+            <div class="search">
+                <img src="./icons/search.svg" alt="search-icon" height="20px">
+                <p>Search</p>
+            </div>
+            <div class="forum">
+                <img src="./icons/forum.svg" alt="focum-icon" height="20px">
+                <p>Forum</p>
+            </div>
+        </nav>
+        <user>
+            <button id="open-dialog" type="button">Add Manga</button>
+            <dialog id="manga-dialog">
+                <h2>Add  New Manga</h2>
+                <form method="dialog">
+                    <label for="title">Manga title
+                    <input id="title" name="title" type="text" required>
+                    </label>
+
+                    <label for="author">Author
+                    <input id="author" name="author" type="text" required>
+                    </label>
+
+
+                    <label for="pages">Pages
+                    <input id="pages" name="pages" type="number" required>
+                    </label>
+
+                    <label for="image"> Manga Cover URL
+                        <input id="image" name="image" type="url" placeholder="https://example.com/manga-cover.jpg" required>
+                    </label>
+                    <label class="radio" for="read">Read
+                    <div>
+                        <input id="read" name="read" type="radio" value="yes">yes
+                    </div>
+                    <div>
+                        <input id="read" name="read" type="radio" value="no">no
+                    </div>
+                    </label>
+
+                    <div class="dialog-buttons">
+                        <button value="cancel" type="submit">Cancel</button>
+                        <button value="add" type="submit">Add Manga</button>
+                    </div>
+                </form>
+            </dialog>
+            <img src="./icons/avatar-girl.svg" height="50px">
+            <usernick>Sakura</usernick>
+            <button class="login-btn">Log out</button>
+        </user>
+    </header>
+    <main>
+        <div class="cards">
+            <div class="card">
+                <img src="./covers/Goodbye Eri.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 390 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/I need answer!.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 812 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/Kaijuu8.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 456 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/Mob100.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 910 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/onePeace.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 998 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/overloard.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 310 pages</div>
+            </div>
+            <div class="card">
+                <img src="./covers/Paradise.jpg">
+                <button class="delete">Delete</button>
+                <button class="change">Read</button>
+                <div class="pages"> 240 pages</div>
+            </div>
+            <div class="newcard">
+                <h1>+</h1>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
