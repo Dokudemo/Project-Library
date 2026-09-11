@@ -8,6 +8,7 @@
     --second-black:#1C1C1C;
     --main-red:#EF3520;
     --main-green: #79bc3b;
+    --main-yellow:#bdb12f;
 }
 * {
     margin: 0;
@@ -199,6 +200,7 @@ main {
         position: relative;
         border-radius: 14px;
         transition: box-shadow 0.3s ease;
+        overflow: hidden;
     }
     .newcard {
         border-radius: 14px;
@@ -223,23 +225,54 @@ main {
         right: 10px;
         background-color: var(--main-red);
     }
-    .card .change {
+    .card .read {
         position: absolute;
         bottom: 10px;
         left: 10px;
         background-color: var(--main-green);
+    }
+    .card .read.unread {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: var(--main-yellow);
     }
     .card .pages {
         position: absolute;
         z-index: 3;
         color: rgb(0, 0, 0);
         font-size: 16px;
-        background-color: #cbb016;
+        font-weight: 900;
+        background-color: #bdb12f;
         height: 20px;
-        width: 69px;
-        top: 10px;
-        left: 10px;
-        border: 1px solid black;
+        width: 100%;
+        bottom: 50px;
+        text-align: center;
+    }
+
+    .card .author {
+        position: absolute;
+        z-index: 3;
+        color: #fefefe;
+        font-size: 20px;
+        background-color: #0a0a0ae5;
+        height: 20px;
+        width: 100%;
+        top: 0px;
+        text-align: center;
+    }
+
+    .card .title {
+        position: absolute;
+        z-index: 3;
+        color: #ffffff;
+        font-size: 20px;
+        background-color: #0a0a0ae5;
+        height: 25px;
+        width: 100%;
+        top: 20px;
+        text-align: center;
+    }
 
     }
     button {
@@ -254,4 +287,3 @@ main {
     .newcard:hover {
         box-shadow: 0 0 15px var(--main-red);
     }
-}
