@@ -1,8 +1,14 @@
 const addBtn = document.querySelector('#open-dialog');
+const addCard = document.querySelector('.newcard');
 const dialog = document.querySelector('#manga-dialog');
-
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesInput = document.querySelector('#pages')
 
 addBtn.addEventListener('click', () => {
+    dialog.showModal();
+})
+addCard.addEventListener('click', () => {
     dialog.showModal();
 })
 
@@ -10,43 +16,41 @@ dialog.addEventListener('close', () => {
     console.log('Dialog result:', dialog.returnValue)
 })
 
+// Основной массив с книгами
+const myLibrary = []
 
-const gimli = {
-    name: 'Gimli',
-    race: 'dwarf',
-    weapon: 'axe',
-    'dmg per second': '35 DPS',
-    greet: function() {
-        return `Hi, my name is ${this.name}`
-    },
-    fight: function() {
-        return `${this.name} take ${this.weapon} and make 1900 dmg`
+// Конструктор книг
+function Book(title, author, pages,readStatus) {
+
+    if (!new.target) {
+    throw Error("You must use the 'new' operator to call the constructor");
     }
+
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = readStatus;
+    this.id = crypto.randomUUID();
 }
 
-console.log(gimli.greet())
-
-console.log(gimli)
-
-console.log(gimli.fight())
-
-console.log(gimli["dmg per second"])
-
-
-gimli.age = 150;
-
-console.log(gimli)
-
-console.log(gimli.age)
-
-gimli.weapon = 'battle axe';
-
-console.log(gimli)
-
-delete gimli.weapon
-
-console.log(gimli)
-
-for(let key in gimli) {
-    console.log(gimli[key]);
+// Функция добавление книги в массив
+function AddBookToLibrary(book, library) {
+    library.push(book);
 }
+
+dialog.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const selectedReadInput = document.querySelector(
+    'input[name="read"]:checked'
+    );
+
+    const newBook = new Book(title, author, pages, selectedReadInput.value);
+
+    AddBookToLibrary(newBook, myLibrary);
+    dialog.close("add");
+
+});
