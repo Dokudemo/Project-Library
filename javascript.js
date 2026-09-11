@@ -12,12 +12,23 @@ const form = document.querySelector('#manga-dialog form');
 addBtn.addEventListener('click', () => {
     form.reset();
     dialog.showModal();
+    
 })
 addCard.addEventListener('click', () => {
     form.reset();
     dialog.showModal();
 })
 
+dialog.addEventListener('click', (e) => {
+
+    const buttonCancel = document.querySelector(
+        'button[value="cancel"]'
+    );
+
+    if (e.target === dialog || e.target == buttonCancel) {
+        dialog.close();
+    }
+});
 dialog.addEventListener('close', () => {
     console.log('Dialog result:', dialog.returnValue)
 })
@@ -47,6 +58,12 @@ function AddBookToLibrary(book, library) {
 
 dialog.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    if (e.submitter.value === 'cancel') {
+        dialog.close();
+        return;
+    }
+
 
     const title = titleInput.value;
     const author = authorInput.value;
