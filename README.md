@@ -4,17 +4,10 @@ The application allows users to manage a personal manga collection: add new mang
 
 ## Live Demo
 
-Add your GitHub Pages link here:
-
-[Live Preview](https://dokudemo.github.io/Project-Library/)
+Live Preview: (https://dokudemo.github.io/Project-Library/)
 
 ## Screenshot
-
-Add a screenshot of your project here later:
-
-```text
 ./ad/project-preview.png
-```
 
 ## Features
 
