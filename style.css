@@ -45,16 +45,23 @@ header {
         font-style: normal;
         letter-spacing: 5px;
         text-decoration: none;
-
+        display: flex;
     }
     
     nav img {
         filter: invert(60%);
     }
-    nav,
-    usernick {
+    nav {
         display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: var(--second-grey);
+        margin-right: 150px;
+    }
+    usernick {
+        display: flex;
+        justify-content: flex-end;
         align-items: center;
         gap: 20px;
         color: var(--second-grey);
@@ -80,6 +87,7 @@ header {
         height: 30px;
         width: 80px;
         border-radius: 10px;
+        
     }
 }
 
@@ -93,6 +101,10 @@ main {
         font-size: 5rem;
         color: var(--second-grey);
         margin-top: 20px;
+
+        a:hover{
+            color:  var(--main-red);
+        }
     }
 
     .library {
